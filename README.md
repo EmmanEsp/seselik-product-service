@@ -1,1 +1,0 @@
-# seselik-product-service
