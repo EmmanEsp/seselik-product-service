@@ -10,9 +10,67 @@ fastapi = "^0.78.0"
 uvicorn = "^0.17.6"
 SQLAlchemy = "^1.4.39"
 psycopg2-binary = "^2.9.3"
+SQLAlchemy-Utils = "^0.38.2"
+requests = "^2.28.0"
+coverage = "^6.4.1"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2.19.0"
+pytest = "^7.1.2"
+hypothesis = "^6.47.5"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 80
+
+[tool.black]
+line-length = 80
+exclude = '''
+  /(
+      \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  '''
+
+[tool.interrogate]
+ignore-init-module = true
+ignore-init-method = true
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-module = false
+fail-under = 50
+exclude = ["app/config", "__init__.py"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+verbose = 2
+quiet = false
+whitelist-regex = []
+color = true
+
+[tool.vulture]
+ignore_decorators = ["@app.route", "@require_*"]
+paths = ["app"]
+ignore_names = ["dialect"]
+min_confidence = 80
+sort_by_size = true
+verbose = false
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$major.$minor.$patch"
+version_files = [
+    "app/__init__.py",
+    "pyproject.toml:version"
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

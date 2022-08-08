@@ -13,7 +13,7 @@ from app.infraestructure.database.session import Base
 class Product(Base):
     """Product Model Class"""
 
-    __tablename__: Any = "products"
+    __tablename__: Any = "product_endpoints"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     name = Column(String, nullable=False)
