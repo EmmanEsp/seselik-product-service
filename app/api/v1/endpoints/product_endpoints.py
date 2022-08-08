@@ -1,14 +1,14 @@
 """
 Product endpoints
 """
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, status
 
 from app.services.product_service import ProductService
 
 router = APIRouter()
 
 
-@router.get("")
+@router.get("", status_code=status.HTTP_200_OK)
 def get_all_products(
     service: ProductService = Depends(),
 ):

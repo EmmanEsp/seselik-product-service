@@ -14,7 +14,7 @@ def init() -> FastAPI:
     """
     _app = FastAPI(
         title="product-service",
-        description="Seselik service to handle products",
+        description="Seselik service to handle product_endpoints",
         version="0.1.0",
     )
     _app.include_router(router=v1_router, prefix="/api/v1")

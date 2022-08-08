@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 from app.settings.database_settings import get_postgres_uri
 
-Session = sessionmaker(
+SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=create_engine(
