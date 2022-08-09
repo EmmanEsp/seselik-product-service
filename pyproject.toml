@@ -7,7 +7,7 @@ authors = ["emmanesp"]
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.78.0"
-uvicorn = "^0.17.6"
+uvicorn = "^0.18.2"
 SQLAlchemy = "^1.4.40"
 psycopg2-binary = "^2.9.3"
 SQLAlchemy-Utils = "^0.38.2"
