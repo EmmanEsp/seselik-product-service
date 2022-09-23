@@ -17,7 +17,6 @@ def init() -> FastAPI:
         description="Seselik service to handle product_endpoints",
         version="0.1.0",
     )
-    print("jajaja")
     _app.include_router(router=v1_router, prefix="/api/v1")
     return _app
 
